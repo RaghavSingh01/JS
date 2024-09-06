@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This keyword</title>
+    <style>
+        *{
+            background-color: black;
+        }
+        h1{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello</h1>
+</body>
+<script>
+    var random = {
+        name: "John",
+        age: 30,
+        info(){
+            console.log(this.name + " is " + this.age + " years old and the loves the GT-R.");   //Here the this keyword referenced to the name and age in the function where the method was declared.
+        }
+    }
+    random.info();
+
+    var car = "GT-R";
+    function cars(){
+        var car = "Corolla";
+        alert("Car: " + car);       //This will give corolla as the value of car as it was defined in the function itself.
+        alert("One of the best Cars is " + this.car);  //This will give value of car as GT-R because this keyword points to the global variable when used in a function.
+    }
+    cars();
+
+
+    var bikes = {
+        name: "Triumph",
+        models: ["Speed 400", "Scrambler 400", "Thruxton", "Street Triple RS"],
+        info(){
+            // this.models.forEach(function(element) {
+            //     console.log(this.name,element);     //Despite writing this.name here it won't show triumph with the names of the bikes because this doesn't have access to the global variable name.   
+            // });
+
+            this.models.forEach(function(ele){
+                console.log(this.name, ele);
+            },this);                    //This will show the name triumph with all the model names because this keyword was added here which gave it access to the name object.
+        }
+    }
+    bikes.info();
+</script>
+</html>

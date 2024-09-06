@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="para"> Helo there</p>
+    <!-- <button id="button">Cick me</button> -->
+</body>
+<script>
+//     let car = {             
+//     name: "911",
+//     brand: "Porshe",
+//     year: 1963
+// };
+// function cara(){
+//     alert("Its a good car!!!");
+// }
+// car.message = cara;
+// document.getElementById("para").innerHTML = car.brand + " made " + car.name + " in " + car.year;
+// document.getElementById("button").onclick = car.message;
+
+
+//Object accessors
+// var car2 = {        
+// name: "M5 Competition",
+// brand: "BMW",
+// year: 2017,
+// get model(){
+//     return this.name;
+// } ,
+// };
+// document.getElementById("para").innerHTML = car2.model;
+
+var car3 = {             
+    name: "GT-R",
+    brand: "Nissan",
+    year: 1999,
+    modelname: "",
+    set model(model){
+        this.modelname = model;
+    }
+};
+car3.model = "R-34";
+document.getElementById("para").innerHTML = car3.modelname;
+</script>
+</html>

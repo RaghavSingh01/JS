@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+    <style>
+        *{
+            background-color: black;
+        }
+        h1{
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello </h1>
+
+</body>
+<script>
+    let result = function (score) {
+        return new Promise(function (resolve, reject) {
+            console.log("Calculating your results...")
+            if (score > 70) {
+                resolve("You passed with " + score + "% marks.");
+            }
+            else {
+                reject("You failed with  " + score + "% marks.");
+            }
+        });
+    }
+    let grade = function (response) {
+        console.log("Calculating your grade ...");
+        return new Promise(function (resolve, reject) {
+            resolve("Your grade is A." + response)
+        });
+    }
+    //This is done without using async and await. The function was called and their responses were stored in a confusing manner.
+    // result(75).then(response=>{
+    //     console.log("Results recieved.");
+    //     return grade(response);
+    // }).then(finalgrade=>{
+    //     console.log(finalgrade);
+    // }).catch(err=>{
+    //     console.log(err)
+    // });
+
+
+    //Using async await.
+    async function main() {
+        try {
+            const response = await result(81);
+            console.log("Results recieved.");
+            const finalgrade = await grade(response);
+            console.log(finalgrade);
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+    main();
+</script>
+
+</html>

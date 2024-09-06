@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: black;
+            color: azure;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello</h1>
+    <form action="msg.html" name="form1" onsubmit="return(form_validate())">
+        <label for="email">Email id:</label> <br>
+        <input name="eMail" type="email" placeholder="example@eg.com"> <br> <br>
+        <label for="">Password: </label><br>
+        <input name="Password" type="password" placeholder="Enter your password"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+<script>
+function form_validate(){
+    if(document.form1.eMail.value == ""){
+        alert("Please enter your email id");
+        document.form1.eMail.focus();
+        return false;
+    }
+    else if(document.form1.Password.value==""){
+        alert("Please enter your password.");
+        document.form1.Password.focus();
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+</script>
+</html>
