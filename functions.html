@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="Hel"></p>
+</body>
+<script>
+    function my_func(value){
+        document.getElementById("Hel").innerHTML= value*value;
+    }
+    my_func("Hello");
+
+    //Generator function
+    function* my_gen(){
+        yield 1;
+        yield 2;
+        return 3;
+    }
+    let generator = my_gen();
+    let one = generator.next();
+    let two = generator.next();
+    let three = generator.next();
+    alert(JSON.stringify(one));
+    alert(JSON.stringify(two));
+    alert(JSON.stringify(three));           //Yaha ek ek karke karna pada kyuki ek baar mei sirf function ki ek hi line tak jaata hai. 
+                                            //Output hota hai iska 2 properties mei =>  value="yield" and done="if return statement reached true, else false."
+                                            //Yaha hamne 3 times ek var leke call kiya hai lines ko function ki to first 2 rimes yield aaega 
+                                            // This means ki done mei false aaega kyuki yield aara hai aur return statement nahi 
+                                            //aur jab 3rd line mei jaaenge to done mei true aaega because we will have reached the return statement by then.
+</script>                                                   
+</html>

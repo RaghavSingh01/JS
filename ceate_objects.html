@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Hello</h1>
+<p id="obj"></p>  
+<br>
+<p id="obj2"></p> 
+<br>
+<p id="obj3"></p>
+</body>
+<script>
+var car = {             //Here we used object literals to create an obejct.
+    name: "911",
+    brand: "Porshe",
+    year: 1963
+};
+document.getElementById("obj").innerHTML = car.name + " is a " + car.brand + " released in " + car.year;
+
+var car2 = new Object();        //We created this object using "new" keyword.
+car2.name = "M5 Competition",
+car2.brand = "BMW",
+car2.year = 2017;
+document.getElementById("obj2").innerHTML = car2.name + " is a " + car2.brand + " released in " + car2.year;
+
+function veh(name, brand, year){            // This object was created using a constructor.
+    this.name = name;
+    this.brand = brand;
+    this.year = year;
+}
+var car3 = new veh(" GT-R R34 ", " Nissan ", 1999 );
+document.getElementById("obj3").innerHTML = car3.name + " is a " + car3.brand + " released in " + car3.year;
+
+
+</script>
+</html>
