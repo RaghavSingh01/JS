@@ -1,0 +1,132 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 60vw;
+            border-radius: 9px;
+            padding-bottom: 10%;
+            height: 60vh;
+        }
+
+        .List {
+            border: 2px solid black;
+            border-radius: 9px;
+            padding-bottom: 10px;
+            width: 50vw;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0%;
+        }
+
+        ul li {
+            border-left: 5px solid black;
+            padding: 20px;
+            margin: 20px 10px;
+            padding-left: 10px;
+        }
+
+        ul li:hover {
+            border-color: red;
+        }
+
+        .delete {
+            color: aliceblue;
+            background-color: blueviolet;
+            float: right;
+            padding: 6px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            color: #000;
+            background-color: red;
+        }
+
+        .add {
+            background-color: red;
+            border-radius: 5px;
+            padding: 6px;
+        }
+
+        .add:hover {
+            background-color: black;
+            color: white;
+        }
+
+        input {
+            padding: 6px;
+            border-radius: 5px;
+            margin: 5px;
+            width: 300px;
+        }
+
+        .addmovie {
+            margin-left: 200px;
+        }
+
+        .addmovie::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .addmovie label {
+            line-height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Movie Time </h1>
+            <p>Watch these amazing movies.</p>
+        </header>
+        <div class="List">
+            <ul class="movies">
+                <li>
+                    <span class="name">The Avengers</span>
+                    <span><button class="delete">delete</button></span>
+                </li>
+                <li>
+                    <span class="name">Interstellar</span>
+                    <span><button class="delete">delete</button></span>
+                </li>
+                <li>
+                    <span class="name">Star Wars</span>
+                    <span><button class="delete">delete</button></span>
+                </li>
+                <li>
+                    <span class="name">The Shawshank Redemption</span>
+                    <span><button class="delete">delete</button></span>
+                </li>
+            </ul>
+            <form class="addmovie">
+                <input type="text" placeholder="Add your favourite movie..." id="movieInput">
+                <button type="submit" class="add">Add</button><br>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="./Moviesapp.js"></script>
